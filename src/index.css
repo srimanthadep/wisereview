@@ -1,0 +1,872 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Rosemary';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: local('Rosemary'), url('/fonts/rosemary/Rosemary.woff') format('woff');
+}
+
+.font-rosemary {
+  font-family: 'Rosemary', cursive, -apple-system, sans-serif !important;
+  font-synthesis: weight style !important;
+}
+
+.font-rosemary-bold {
+  font-family: 'Rosemary', cursive, -apple-system, sans-serif !important;
+  font-weight: 900 !important;
+  font-synthesis: weight style !important;
+  -webkit-text-stroke: 0.55px currentColor;
+  text-shadow: 0 0 0.4px currentColor;
+}
+
+.font-rosemary-hero {
+  font-family: 'Rosemary', cursive, -apple-system, sans-serif !important;
+  font-weight: 800 !important;
+  font-style: italic !important;
+  font-synthesis: weight style !important;
+  -webkit-text-stroke: 0.4px currentColor;
+}
+
+.cd-brand-text {
+  font-family: 'Rosemary', cursive, -apple-system, sans-serif !important;
+  font-size: 19px;
+  font-weight: normal !important;
+  letter-spacing: -0.01em;
+  -webkit-text-stroke: 0px !important;
+  text-shadow: none !important;
+  color: #ffffff;
+}
+
+.light .cd-brand-text {
+  color: #000000 !important;
+}
+
+.font-display {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #0a1329;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+ 
+body {
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background-color: transparent;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Home Page Dark Mode Background Image */
+html:not(.light) #landing-page,
+html.dark #landing-page {
+  background-image: url('/bg.png') !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-color: #081738 !important;
+}
+
+.light #landing-page,
+html.light #landing-page {
+  background-image: none !important;
+  background-color: #edeceb !important;
+}
+
+/* Theme Base Styles */
+html.light, .light {
+  background-color: #edeceb !important; /* Premium warm stone canvas */
+  color: #0f172a !important; /* Deep slate-900 */
+}
+
+/* Root or wrapper color adaptations */
+.light .bg-\[\#050505\],
+.light .bg-slate-950,
+.light .bg-black {
+  background-color: #edeceb !important; /* light stone background */
+}
+
+/* Universal Light Mode Typography Overrides */
+.light .text-white,
+html.light .text-white,
+.light .text-slate-100,
+html.light .text-slate-100 {
+  color: #0f172a !important; /* Deep slate-900 */
+}
+
+.light .text-\[\#e5e5e5\] {
+  color: #1e293b !important; /* Slate-800 */
+}
+
+.light [class*="text-white\/90"],
+.light [class*="text-white\/80"],
+.light .text-white\/90,
+.light .text-white\/80,
+.light .text-slate-300 {
+  color: #1e293b !important; /* Slate-800 */
+}
+
+.light [class*="text-white\/75"],
+.light [class*="text-white\/70"],
+.light [class*="text-white\/60"],
+.light .text-white\/70,
+.light .text-white\/60 {
+  color: #334155 !important; /* Slate-700 */
+}
+
+.light [class*="text-white\/50"],
+.light [class*="text-white\/40"],
+.light .text-white\/50,
+.light .text-white\/40,
+.light .text-slate-400,
+.light .text-slate-500 {
+  color: #64748b !important; /* Slate-500 */
+}
+
+.light [class*="text-white\/30"],
+.light [class*="text-white\/25"],
+.light [class*="text-white\/20"],
+.light [class*="text-white\/15"],
+.light .text-white\/30 {
+  color: #94a3b8 !important; /* Slate-400 */
+}
+
+/* Prevent text-fill override on gradient headings */
+.light .bg-clip-text,
+html.light .bg-clip-text {
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+.light .bg-clip-text.bg-gradient-to-r,
+html.light .bg-clip-text.bg-gradient-to-r {
+  background-image: linear-gradient(to right, #0d9488, #2563eb) !important;
+}
+
+/* Card, containers, and secondary panel adaptations */
+.light .bg-white\/5,
+.light [class*="bg-white\/5"],
+.light .bg-\[\#0d0d0d\],
+.light .bg-\[\#121212\],
+.light .bg-slate-900\/35,
+.light .bg-slate-900\/50,
+.light .bg-slate-900\/60,
+.light .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 1px 3px 0 rgba(15, 23, 42, 0.03) !important;
+}
+
+/* Secondary buttons in light mode */
+.light a.bg-white\/5,
+.light button.bg-white\/5 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.05) !important;
+}
+
+.light a.bg-white\/5:hover,
+.light button.bg-white\/5:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Active tab selection or interactive highlights */
+.light .bg-[#050505] {
+  background-color: #edeceb !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light .text-black {
+  color: #000000 !important;
+}
+
+/* Border Adaptations */
+.light .border-white\/10,
+.light .border-white\/5,
+.light .border-white\/15,
+.light .border-white\/20,
+.light [class*="border-white\/"],
+.light .border-slate-800,
+.light .border-slate-900 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Navigation & Sticky Headers */
+.light .bg-\[\#050505\]\/85,
+.light .bg-\[\#050505\]\/80 {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  border-color: #e2e8f0 !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.03) !important;
+}
+
+/* Shadow adaptions */
+.light .shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Input, option, select elements */
+.light input, 
+.light select, 
+.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.02) !important;
+}
+
+.light input:focus, 
+.light select:focus, 
+.light textarea:focus {
+  border-color: #0d9488 !important; /* teal-600 */
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.15) !important;
+}
+
+.light input::placeholder, 
+.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+.light select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Hover effect updates */
+.light .bg-white\/10 {
+  background-color: #f1f5f9 !important;
+}
+
+.light .hover\:bg-white\/10:hover {
+  background-color: #e2e8f0 !important;
+}
+
+.light .hover\:bg-white\/5:hover {
+  background-color: #edeceb !important;
+}
+
+.light .hover\:border-white\/20:hover {
+  border-color: #94a3b8 !important;
+}
+
+/* Accents (Teal / Cyan) optimization for readability in Light Mode */
+.light .text-teal-400,
+.light .text-cyan-400 {
+  color: #0d9488 !important; /* teal-600 */
+}
+
+.light .border-teal-400,
+.light .border-cyan-400 {
+  border-color: #0d9488 !important; /* teal-600 */
+}
+
+.light .bg-teal-400\/10,
+.light .bg-cyan-400\/10 {
+  background-color: rgba(13, 148, 136, 0.08) !important;
+}
+
+.light .bg-teal-500\/10 {
+  background-color: rgba(13, 148, 136, 0.08) !important;
+}
+
+.light .bg-blue-600\/10 {
+  background-color: rgba(37, 99, 235, 0.06) !important;
+}
+
+/* QR Code & Review details sections */
+.light .bg-slate-950 {
+  background-color: #edeceb !important;
+}
+
+/* Primary CTA Button gradient font */
+.light button.bg-gradient-to-r,
+.light a.bg-gradient-to-r {
+  color: #ffffff !important;
+}
+
+.light .hero-primary-btn {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2) !important;
+}
+
+.light .hero-primary-btn:hover {
+  background-color: #1e293b !important;
+}
+
+/* Selected Praise Points / Value Highlights */
+.praise-point-active,
+.light .praise-point-active {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+.praise-point-active svg,
+.light .praise-point-active svg,
+.praise-point-active [class*="text-"],
+.light .praise-point-active [class*="text-"] {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+.dark .praise-point-active {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark .praise-point-active svg,
+.dark .praise-point-active [class*="text-"] {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
+/* Custom Sleek Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505; /* matches dark canvas */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b; /* slate-800 */
+  border-radius: 9999px;
+  border: 2px solid #050505; /* padding illusion */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155; /* slate-700 */
+}
+
+/* Light mode scrollbar overrides */
+.light ::-webkit-scrollbar-track,
+html.light ::-webkit-scrollbar-track {
+  background: #edeceb;
+}
+
+.light ::-webkit-scrollbar-thumb,
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border: 2px solid #edeceb;
+}
+
+.light ::-webkit-scrollbar-thumb:hover,
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e293b #050505;
+}
+
+.light * {
+  scrollbar-color: #cbd5e1 #edeceb;
+}
+
+/* =========================
+   COOLDOCK NAVBAR STYLES
+   ========================= */
+:root {
+  --cd-ink: #000;
+  --cd-white: #fff;
+  --cd-line: #00000014;
+  --cd-ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+.cd-site-header {
+  z-index: 100;
+  pointer-events: none;
+  width: 100%;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.cd-nav-shell {
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.88); /* Black navbar for dark mode */
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  width: min(calc(100% - 32px), 690px);
+  height: 52px;
+
+  margin-inline: auto;
+  padding: 6px 8px 6px 14px;
+
+  position: relative;
+
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 12px 36px rgba(0, 0, 0, 0.5);
+}
+
+.cd-brand {
+  color: #fff;
+  letter-spacing: -0.32px;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Inter Display", Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.cd-app-logo {
+  flex: none;
+  height: 25px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.cd-nav-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.cd-nav-desktop ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cd-nav-desktop a {
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  font-family: "Inter Display", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  padding: 4px 0;
+}
+
+.cd-nav-desktop a:hover {
+  color: #ffffff;
+}
+
+.cd-button {
+  min-height: 48px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 22px;
+
+  border: 1px solid #0000;
+  border-radius: 13px;
+
+  background: transparent;
+
+  color: inherit;
+
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s var(--cd-ease),
+    background-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.cd-button:hover {
+  transform: translateY(-2px);
+}
+
+.cd-button--small {
+  min-height: 40px;
+
+  padding-inline: 17px;
+
+  border-radius: 10px;
+
+  font-size: 0.82rem;
+}
+
+.cd-button--primary {
+  color: #000000;
+  background: #ffffff;
+
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.2);
+}
+
+.cd-button--primary:hover {
+  background: #f1f5f9;
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.3);
+}
+
+.cd-button__icon {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
+.cd-nav-download.cd-button--small {
+  width: auto;
+  min-width: 106px;
+  height: 36px;
+  min-height: 36px;
+
+  padding: 0 16px;
+
+  gap: 6px;
+
+  border-radius: 12px;
+
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #000000;
+  background: #ffffff;
+}
+
+.cd-nav-download:hover {
+  background: #f1f5f9;
+}
+
+/* Top Right Utilities (Theme Switch & Sign In) in Dark Mode */
+.cd-top-right-bar {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cd-theme-switch-btn {
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12), 0 4px 20px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-family: "Inter Display", Inter, -apple-system, sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: transform 0.18s var(--cd-ease), box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.cd-theme-switch-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 6px 24px rgba(0, 0, 0, 0.5);
+  background: #111318;
+}
+
+.cd-utility-btn {
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: #ffffff;
+  font-family: "Inter Display", Inter, -apple-system, sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.cd-utility-btn:hover {
+  background: #111318;
+  transform: translateY(-2px);
+}
+
+.light .cd-utility-btn {
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  color: #0f172a !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), inset 0 1px 1px #fff !important;
+}
+
+.light .cd-utility-btn:hover {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.light .cd-nav-shell,
+html.light .cd-nav-shell {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04), inset 0 1px 1px #fff !important;
+}
+
+.light .cd-brand,
+.light .cd-brand-text {
+  color: #000000 !important;
+}
+
+.light .cd-nav-desktop a {
+  color: #00000099 !important;
+}
+
+.light .cd-nav-desktop a:hover {
+  color: #000000 !important;
+}
+
+.light .cd-button--primary,
+.light .cd-nav-download {
+  color: #ffffff !important;
+  background: #000000 !important;
+  box-shadow: 0 10px 28px #0000002b !important;
+}
+
+.light .cd-button--primary:hover,
+.light .cd-nav-download:hover {
+  background: #222222 !important;
+}
+
+.light .cd-theme-switch-btn,
+html.light .cd-theme-switch-btn {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06), inset 0 1px 1px #fff !important;
+  color: #0f172a !important;
+}
+
+.cd-nav-mobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .cd-top-right-bar {
+    right: 14px;
+    top: 18px;
+    gap: 6px;
+  }
+  .cd-theme-switch-label {
+    display: none;
+  }
+  .cd-theme-switch-btn {
+    padding: 0 10px;
+    height: 34px;
+  }
+  .cd-utility-btn {
+    padding: 0 10px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 680px) {
+  .cd-nav-shell {
+    gap: 12px;
+    height: 48px;
+    padding-inline: 12px;
+    width: calc(100% - 24px);
+  }
+
+  .cd-nav-desktop {
+    display: none;
+  }
+
+  .cd-nav-mobile {
+    display: block;
+    position: relative;
+  }
+
+  .cd-nav-mobile summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    color: #fff;
+  }
+
+  .light .cd-nav-mobile summary {
+    color: #000 !important;
+  }
+
+  .cd-nav-mobile summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .cd-nav-mobile[open] .cd-nav-mobile__panel {
+    position: absolute;
+    top: calc(100% + 14px);
+    right: -8px;
+    width: 240px;
+    background: rgba(10, 12, 18, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 101;
+  }
+
+  .light .cd-nav-mobile[open] .cd-nav-mobile__panel {
+    background: #fffffff0 !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 16px 40px #00000038, inset 1px 1px 1px #fff !important;
+  }
+
+  .cd-nav-mobile__panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cd-nav-mobile__panel a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .cd-nav-mobile__panel a:hover {
+    color: #fff;
+  }
+
+  .light .cd-nav-mobile__panel a {
+    color: #0009 !important;
+  }
+
+  .light .cd-nav-mobile__panel a:hover {
+    color: #000 !important;
+  }
+
+  .light .cd-nav-mobile__panel span {
+    color: #000 !important;
+  }
+}
+
+/* Phone Mockup Screen: Always preserve authentic dark OLED display */
+.light .mockup-preserve-dark {
+  background-color: #0a0c12 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.light .mockup-preserve-dark .text-white {
+  color: #ffffff !important;
+}
+
+.light .mockup-preserve-dark [class*="text-white/80"] {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.light .mockup-preserve-dark [class*="text-white/75"] {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.light .mockup-preserve-dark [class*="text-white/70"] {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.light .mockup-preserve-dark [class*="text-white/60"] {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.light .mockup-preserve-dark [class*="text-white/50"] {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.light .mockup-preserve-dark [class*="text-white/40"] {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.light .mockup-preserve-dark [class*="text-white/30"] {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.light .mockup-preserve-dark [class*="bg-white/"] {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.light .mockup-preserve-dark [class*="border-white/"] {
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+.light .mockup-preserve-dark button.bg-white\/\[0\.04\] {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Floating Badges preservation */
+.light .floating-accent-badge {
+  background-color: rgba(13, 16, 23, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.light .floating-accent-badge [class*="text-white"] {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.light .floating-accent-badge .text-white {
+  color: #ffffff !important;
+}
+

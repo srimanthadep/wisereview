@@ -1,0 +1,6 @@
+{
+  "name": "WiseReview",
+  "description": "Multi-tenant Review Generation & Local SEO Growth SaaS to help local businesses collect natural-looking Google reviews via QR codes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
