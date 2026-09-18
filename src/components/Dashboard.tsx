@@ -30,6 +30,7 @@ import {
   Zap,
   ShieldCheck,
   Star,
+  User,
 } from "lucide-react";
 import wiseReviewLogo from "../assets/images/logo.png";
 
@@ -679,14 +680,12 @@ export default function Dashboard({ businessSlug, onLogout, onNavigateToPublic, 
               View Public Page <ExternalLink className="w-3.5 h-3.5" />
             </button>
             <div className="pl-1">
-              <UserButton
-                afterSignOutUrl="/"
-                appearance={{
-                  elements: {
-                    avatarBox: "w-9 h-9 rounded-full ring-2 ring-white/10 hover:ring-indigo-400/60 transition-all",
-                  },
-                }}
-              />
+              <div
+                title="Account Profile"
+                className="w-9 h-9 rounded-full bg-gradient-to-tr from-indigo-500/20 to-violet-500/20 border border-white/10 flex items-center justify-center text-white/80"
+              >
+                <User className="w-4 h-4 text-indigo-300" />
+              </div>
             </div>
           </div>
           </div>

@@ -169,13 +169,13 @@ export default function LandingPage({ theme, toggleTheme, onNavigateToDashboard 
            TOP RIGHT THEME SWITCH & UTILITIES
            ========================= */}
       <div className="cd-top-right-bar" aria-label="Website utilities">
-        <SignedOut>
-          <SignInButton mode="modal">
-            <button className="cd-utility-btn" aria-label="Sign In">
-              Sign In
-            </button>
-          </SignInButton>
-        </SignedOut>
+        <button
+          onClick={onNavigateToDashboard}
+          className="cd-utility-btn"
+          aria-label="Dashboard"
+        >
+          Dashboard
+        </button>
         <button
           onClick={toggleTheme}
           className="cd-theme-switch-btn"
