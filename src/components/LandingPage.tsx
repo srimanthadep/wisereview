@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import { motion, AnimatePresence } from "motion/react";
 import {
   Star,
@@ -240,34 +239,14 @@ export default function LandingPage({ theme, toggleTheme, onNavigateToDashboard 
 
           {/* ACTION BUTTON & MOBILE CONTROLS */}
           <div className="flex items-center gap-2">
-            <SignedOut>
-              <SignUpButton mode="modal">
-                <button
-                  className="cd-button cd-button--primary cd-button--small cd-nav-download"
-                  aria-label="Get Started Free"
-                >
-                  <span>Get Started</span>
-                  <ArrowRight className="cd-button__icon" />
-                </button>
-              </SignUpButton>
-            </SignedOut>
-            <SignedIn>
-              <button
-                onClick={onNavigateToDashboard}
-                className="cd-button cd-button--primary cd-button--small cd-nav-download"
-                aria-label="Dashboard"
-              >
-                <span>Dashboard</span>
-                <ArrowRight className="cd-button__icon" />
-              </button>
-              <UserButton
-                appearance={{
-                  elements: {
-                    avatarBox: "w-8 h-8 rounded-full ring-1 ring-black/20 hover:ring-black/50 transition-all",
-                  },
-                }}
-              />
-            </SignedIn>
+            <button
+              onClick={onNavigateToDashboard}
+              className="cd-button cd-button--primary cd-button--small cd-nav-download"
+              aria-label="Dashboard"
+            >
+              <span>Dashboard</span>
+              <ArrowRight className="cd-button__icon" />
+            </button>
 
             {/* MOBILE MENU */}
             <details className="cd-nav-mobile" data-cd-menu="">
@@ -308,13 +287,12 @@ export default function LandingPage({ theme, toggleTheme, onNavigateToDashboard 
                     {theme === "dark" ? <Sun className="w-3.5 h-3.5 text-amber-500" /> : <Moon className="w-3.5 h-3.5 text-teal-600" />}
                     <span>{theme === "dark" ? "Light" : "Dark"}</span>
                   </button>
-                  <SignedOut>
-                    <SignInButton mode="modal">
-                      <button className="text-xs font-semibold text-black/70 hover:text-black cursor-pointer">
-                        Sign In
-                      </button>
-                    </SignInButton>
-                  </SignedOut>
+                  <button
+                    onClick={onNavigateToDashboard}
+                    className="text-xs font-semibold text-black/70 hover:text-black cursor-pointer"
+                  >
+                    Dashboard
+                  </button>
                 </div>
               </div>
             </details>
@@ -358,23 +336,13 @@ export default function LandingPage({ theme, toggleTheme, onNavigateToDashboard 
 
                 {/* Premium CTAs */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
-                  <SignedIn>
-                    <button
-                      onClick={onNavigateToDashboard}
-                      className="hero-primary-btn group relative px-7 py-3.5 text-[15px] font-bold text-[#081738] bg-white hover:bg-slate-100 rounded-xl shadow-[0_12px_32px_rgba(0,0,0,0.35),0_1px_0_rgba(255,255,255,0.8)_inset] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer font-body"
-                    >
-                      <span>Go to Dashboard</span>
-                      <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                    </button>
-                  </SignedIn>
-                  <SignedOut>
-                    <SignUpButton mode="modal">
-                      <button className="hero-primary-btn group relative px-7 py-3.5 text-[15px] font-bold text-[#081738] bg-white hover:bg-slate-100 rounded-xl shadow-[0_12px_32px_rgba(0,0,0,0.35),0_1px_0_rgba(255,255,255,0.8)_inset] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer font-body">
-                        <span>Get Started Free</span>
-                        <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                      </button>
-                    </SignUpButton>
-                  </SignedOut>
+                  <button
+                    onClick={onNavigateToDashboard}
+                    className="hero-primary-btn group relative px-7 py-3.5 text-[15px] font-bold text-[#081738] bg-white hover:bg-slate-100 rounded-xl shadow-[0_12px_32px_rgba(0,0,0,0.35),0_1px_0_rgba(255,255,255,0.8)_inset] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer font-body"
+                  >
+                    <span>Get Started Free</span>
+                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </button>
                   <a
                     href="#how-it-works"
                     className="px-6 py-3.5 text-[15px] font-semibold text-white/90 hover:text-white bg-black/15 hover:bg-black/25 border border-white/20 hover:border-white/35 rounded-xl transition-all duration-200 backdrop-blur-md flex items-center justify-center gap-2 font-body hover:-translate-y-0.5 active:translate-y-0 shadow-sm"
@@ -902,18 +870,12 @@ export default function LandingPage({ theme, toggleTheme, onNavigateToDashboard 
                     <span className="text-white/40 font-light">/ forever</span>
                   </div>
                   <p className="text-xs text-white/40 font-light mt-1.5">No card required · Free for life</p>
-                  <SignedOut>
-                    <SignUpButton mode="modal">
-                      <button className="w-full mt-6 py-3.5 bg-white/5 border border-white/15 text-white font-bold rounded-xl hover:bg-white/10 transition-all cursor-pointer">
-                        Get Started Free
-                      </button>
-                    </SignUpButton>
-                  </SignedOut>
-                  <SignedIn>
-                    <button onClick={onNavigateToDashboard} className="w-full mt-6 py-3.5 bg-white/5 border border-white/15 text-white font-bold rounded-xl hover:bg-white/10 transition-all cursor-pointer">
-                      Go to Dashboard
-                    </button>
-                  </SignedIn>
+                  <button
+                    onClick={onNavigateToDashboard}
+                    className="w-full mt-6 py-3.5 bg-white/5 border border-white/15 text-white font-bold rounded-xl hover:bg-white/10 transition-all cursor-pointer"
+                  >
+                    Get Started Free
+                  </button>
                   <ul className="mt-8 space-y-3.5">
                     {["1 business profile", "Branded QR code", "5 review scans / month", "Basic scan analytics"].map((f) => (
                       <li key={f} className="flex items-center gap-3 text-sm text-white/70 font-light">
@@ -946,18 +908,12 @@ export default function LandingPage({ theme, toggleTheme, onNavigateToDashboard 
                     <span className="text-white/40 font-light">/ lifetime</span>
                   </div>
                   <p className="text-xs text-teal-400/90 font-light mt-1.5">One-time payment · lifetime access</p>
-                  <SignedOut>
-                    <SignUpButton mode="modal">
-                      <button className="w-full mt-6 py-3.5 bg-gradient-to-r from-teal-500 to-blue-600 text-white font-bold rounded-xl shadow-lg shadow-teal-500/20 hover:from-teal-400 hover:to-blue-500 transition-all cursor-pointer flex items-center justify-center gap-2">
-                        Get Started <ArrowRight className="w-4 h-4" />
-                      </button>
-                    </SignUpButton>
-                  </SignedOut>
-                  <SignedIn>
-                    <button onClick={onNavigateToDashboard} className="w-full mt-6 py-3.5 bg-gradient-to-r from-teal-500 to-blue-600 text-white font-bold rounded-xl shadow-lg shadow-teal-500/20 hover:from-teal-400 hover:to-blue-500 transition-all cursor-pointer flex items-center justify-center gap-2">
-                      Open Dashboard <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </SignedIn>
+                  <button
+                    onClick={onNavigateToDashboard}
+                    className="w-full mt-6 py-3.5 bg-gradient-to-r from-teal-500 to-blue-600 text-white font-bold rounded-xl shadow-lg shadow-teal-500/20 hover:from-teal-400 hover:to-blue-500 transition-all cursor-pointer flex items-center justify-center gap-2"
+                  >
+                    Open Dashboard <ArrowRight className="w-4 h-4" />
+                  </button>
                   <ul className="mt-8 space-y-3.5">
                     {["Everything in Free", "Unlimited review scans", "Custom fragment editor", "Full conversion analytics", "Priority support"].map((f) => (
                       <li key={f} className="flex items-center gap-3 text-sm text-white/80 font-light">
@@ -988,17 +944,7 @@ export default function LandingPage({ theme, toggleTheme, onNavigateToDashboard 
               <a href="#how-it-works" className="hover:text-white transition-colors">How it Works</a>
               <a href="#features" className="hover:text-white transition-colors">Features</a>
               <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
-              <SignedOut>
-                <SignInButton mode="modal">
-                  <button className="hover:text-white transition-colors cursor-pointer bg-transparent border-none">Login</button>
-                </SignInButton>
-                <SignUpButton mode="modal">
-                  <button className="hover:text-white transition-colors cursor-pointer bg-transparent border-none">Sign Up</button>
-                </SignUpButton>
-              </SignedOut>
-              <SignedIn>
-                <button onClick={onNavigateToDashboard} className="hover:text-white transition-colors cursor-pointer bg-transparent border-none">Dashboard</button>
-              </SignedIn>
+              <button onClick={onNavigateToDashboard} className="hover:text-white transition-colors cursor-pointer bg-transparent border-none">Dashboard</button>
             </div>
           </div>
           <div className="flex flex-col items-center justify-center pt-8 text-xs text-center">

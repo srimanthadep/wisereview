@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { supabase } from "../supabase";
-import { UserButton } from "@clerk/clerk-react";
 import { Skeleton } from "./Skeleton";
 import { Business, FragmentSet, ScanEvent, CATEGORY_LABELS } from "../types";
 import { generateReview } from "../lib/generator";
